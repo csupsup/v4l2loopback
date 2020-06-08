@@ -2093,7 +2093,7 @@ static void init_vdev(struct video_device *vdev, int nr)
 		V4L2_CAP_VIDEO_CAPTURE | V4L2_CAP_VIDEO_OUTPUT |
 		V4L2_CAP_READWRITE | V4L2_CAP_STREAMING;
 #ifdef V4L2_CAP_VIDEO_M2M
-	vdev->device_caps  |= V4L2_CAP_VIDEO_M2M;
+#if LINUX_VERSION_CODE >= KERNEL_VERSION(3,7,0)
 #endif
 #endif /* >=linux-4.7.0 */
 
